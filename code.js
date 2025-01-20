@@ -80,18 +80,18 @@ function setupControlButtons() {
         if (playing) {
             console.log('Pause the Game');
             playing = false;
-            startButton.innerHTML = 'continue';
+            startButton.innerHTML = 'Continue';
         } else {
             console.log('Cont the game');
             playing = true;
-            startButton.innerHTML = 'pause';
+            startButton.innerHTML = 'Pause';
             play();
         };
     };
 
     clearButton.onclick = () => {
         playing = false;
-        startButton.innerHTML = "start";
+        startButton.innerHTML = "Start";
         resetGrids();
         updateView();
     };
