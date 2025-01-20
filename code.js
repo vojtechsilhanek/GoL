@@ -229,3 +229,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const reloadButton = document.getElementById('reload');
     reloadButton.addEventListener('click', reloadGridBasedOnRes);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const applySizeButton = document.getElementById('applySize');
+    applySizeButton.onclick = updateCellSize;
+});
+
+function updateCellSize() {
+    const newSize = document.getElementById('cellSizeInput').value;
+    document.querySelectorAll('td').forEach(cell => {
+        cell.style.width = `${newSize}px`;
+        cell.style.height = `${newSize}px`;
+    });
+}
