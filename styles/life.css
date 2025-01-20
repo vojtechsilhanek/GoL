@@ -35,4 +35,31 @@ td.live {
   padding: 5px;
 }
 
+.cell-controls {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell-controls span {
+  font-size: 16px;
+  color: #000;
+}
+
+.cell-controls input {
+  width: 35px;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.cell-controls button {
+  background-color: #7f2ccb;
+  border-radius: 4px;
+  border: none;
+  padding: 5px;
+}
+
 
