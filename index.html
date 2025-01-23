@@ -6,7 +6,8 @@
     <meta charset="UTF-8" />
     <title>The Game of Life</title>
     <link rel="stylesheet" href="./styles/life.css" />
-    <link rel="stylesheet" href="./styles/mobile.css" media="only screen and (max-width:600px)">
+    <link rel="stylesheet" href="./styles/mobile.css" media="only screen and (max-width:1000px)">
+    
   </head>
   <body>
     <div id="gridContainer"></div>
@@ -20,6 +21,11 @@
     <div class="cell-controls">
       <input id="cellSizeInput" type="number" value="20" min="10" max="50" step="5" />
       <button id="applySize">Použít</button>
+    </div>
+
+    <div class="rule-controls">
+      <button id="standardRules">Původní pravidla</button>
+      <button id="customRules">Vlastní pravidla</button>
     </div>
 
 

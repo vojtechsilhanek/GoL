@@ -207,7 +207,7 @@ function reloadGridBasedOnRes() {
     const cellSize = 25;
     rows = Math.floor(screenHeight / cellSize) - 8; 
     // -8 radku, aby to nezasahovalo, table by presahoval pres buttony
-    cols = Math.floor(screenWidth / cellSize);
+    cols = Math.floor(screenWidth / cellSize) - 10;
 
     
     grid = new Array(rows);
@@ -243,4 +243,41 @@ function updateCellSize() {
         cell.style.width = `${newSize}px`;
         cell.style.height = `${newSize}px`;
     });
+}
+
+
+let rules = { minSurvive: 2, maxSurvive: 3, birth: 3 }; 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const standardButton = document.getElementById('standardRules');
+    const customButton = document.getElementById('customRules');
+
+    
+    standardButton.onclick = () => {
+        let rules = { minSurvive: 2, maxSurvive: 3, birth: 3 };
+        console.log("Použita původní pravidla:", rules);
+    };
+
+
+    customButton.onclick = () => {
+        let rules = { minSurvive: 1, maxSurvive: 4, birth: 3 }; // změněná pravidla
+        console.log("Použita custom pravidla:", rules);
+    };
+});
+
+
+function applyRules(row, col) {
+    let numNeighbors = countNeighbors(row, col);
+
+    if (grid[row][col] == 1) { // Živá buňka
+        if (numNeighbors < rules.minSurvive || numNeighbors > rules.maxSurvive) {
+            nextGrid[row][col] = 0; // Zemře
+        } else {
+            nextGrid[row][col] = 1; // Přežije
+        }
+    } else if (grid[row][col] == 0) { // Mrtvá buňka
+        if (numNeighbors == rules.birth) {
+            nextGrid[row][col] = 1; // Oživí
+        }
+    }
 }
