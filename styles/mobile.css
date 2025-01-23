@@ -19,7 +19,7 @@ body {
     border: 1px solid #222222;
     width: 20px;
     height: 20px;
-    transition: 0.3s ease;
+    
   }
   td.dead {
     background-color: transparent;
@@ -35,3 +35,15 @@ body {
     padding: 5px;
   }
   
+  .cell-controls button {
+    background-color: rgb(131, 125, 125);
+    border-radius: 4px;
+    border: none;
+    padding: 5px;
+  }
+  .rule-controls button {
+    background-color: rgb(131, 125, 125);
+    border-radius: 4px;
+    border: none;
+    padding: 5px;
+  }
